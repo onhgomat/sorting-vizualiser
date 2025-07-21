@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>🔢 Sorting Visualizer</h1>
+    <div class="controls">
+      <label>Array Size: <span id="size-display">50</span></label>
+      <input type="range" id="size-slider" min="10" max="150" value="50" />
+
+      <label>Speed: <span id="speed-display">50ms</span></label>
+      <input type="range" id="speed-slider" min="5" max="1000" value="50" />
+
+      <select id="algorithm-select">
+        <option value="bubble">Bubble Sort</option>
+        <option value="insertion">Insertion Sort</option>
+        <option value="merge">Merge Sort</option>
+        <option value="quick">Quick Sort</option>
+        <option value="selection">Selection Sort</option>
+      </select>
+
+      <button id="play-btn">▶️ Play</button>
+      <button id="pause-btn">⏸ Pause</button>
+      <button id="step-btn">⏭ Step</button>
+      <button id="reset-btn">🔄 Reset</button>
+    </div>
+
+    <div class="stats">
+      <span>🧠 Comparisons: <span id="comparison-count">0</span></span>
+      <span>🔁 Swaps: <span id="swap-count">0</span></span>
+      <span>⏱ Time: <span id="time-elapsed">0</span> ms</span>
+    </div>
+  </div>
+
+  <div class="bar-container" id="bar-container"></div>
+
+  <hr style="margin: 30px auto; width: 80%;" />
+  <h2 style="text-align: center; color: #00e676;">📊 Time Complexity</h2>
+  <canvas id="complexityChart" width="800" height="400"></canvas>
+
+  <h2 style="text-align: center; color: #00e676; margin-top: 40px;">💾 Space Complexity</h2>
+  <canvas id="spaceChart" width="800" height="400"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
